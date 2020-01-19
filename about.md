@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+I love expressing my thoughts and views through writing. Whatever I write is my own opinion,subject to changes in the future, always open to comments, feedbacks and critisisms.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[lomashbhattarai1@gmail.com](mailto:lomashbhattarai1@gmail.com)
