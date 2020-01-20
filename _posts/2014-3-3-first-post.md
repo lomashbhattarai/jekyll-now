@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 150 words long
+title: First Post
 ---
 
 <!---
