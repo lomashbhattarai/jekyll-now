@@ -11,4 +11,5 @@ I love expressing my thoughts and views through writing. Whatever I write is my 
 A list of:
 
 - [books](https://lomashbhattarai.github.io/books/)
+
 -[topics](https://lomashbhattarai.github.io/topics/)
