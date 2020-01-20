@@ -1,8 +1,10 @@
-american:
+currentlyReading:
   - Boston Red Sox
   - Detroit Tigers
   - New York Yankees
-national:
+toRead:
   - New York Mets
   - Chicago Cubs
   - Atlanta Braves
+read:
+  -xcx
