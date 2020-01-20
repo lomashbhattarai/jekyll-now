@@ -285,7 +285,9 @@ footer {
 
 .flex-container {
 	display: flex;
-	flex-direction:row
+	flex-direction:row;
+	padding: 10px;
+	justify-content:space-between;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
