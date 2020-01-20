@@ -12,4 +12,4 @@ A list of:
 
 - [books](https://lomashbhattarai.github.io/books/)
 
--[topics](https://lomashbhattarai.github.io/topics/)
+- [topics](https://lomashbhattarai.github.io/topics/)
