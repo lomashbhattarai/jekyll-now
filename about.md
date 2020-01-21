@@ -4,7 +4,7 @@ title:
 permalink: /about/
 ---
 
-I love expressing my thoughts and views through writing. Whatever I write is my own opinion,subject to changes in the future, always open to comments, feedbacks and critisisms.
+I love expressing my thoughts and views through writing. The writings are my opinions, subject to changes in the future, always open to comments, feedbacks and critisisms.
 
 [lomashbhattarai1@gmail.com](mailto:lomashbhattarai1@gmail.com)
 
