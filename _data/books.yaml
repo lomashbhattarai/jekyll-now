@@ -1,6 +1,9 @@
 currentlyReading:
   - Atlas Shrugged
 toRead:
-  - 'Trails, Tremors and Hope: The Political Economy of Contemporary Nepal'
-read:
+  - name: 'Trails, Tremors and Hope: The Political Economy of Contemporary Nepal'
+    read: false
+  - name: 'test'
+    read: true
+
   
