@@ -2,7 +2,8 @@
 layout: post
 title: Celebrating Sadness
 ---
-I miss being sad. That state of mind is something special. Where you have a certain distaste of and distance from the outer world. 
+I miss being sad. That state of mind is something special. Where you have a certain distaste of and distance from the outer world.
+
 Dim lights. Words feel more meaningful. Lyrics become a matter of contemplation. You walk about in life without ambition, purposeless, indifferent to the hustle of the city. 
 Occasionally doing things that makes you happy and retreating back into your shell.
 
