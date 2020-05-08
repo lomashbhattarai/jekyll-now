@@ -8,6 +8,8 @@ I love expressing my thoughts and views through writing. The writings are my opi
 
 My old blog (which mostly has poems): [http://dreamwalknepal.blogspot.com/](http://dreamwalknepal.blogspot.com/)
 
+[My portfolio](https://lomashbhattarai.github.io/portfolio/) 
+
 [lomashbhattarai1@gmail.com](mailto:lomashbhattarai1@gmail.com)
 
 A list of:
