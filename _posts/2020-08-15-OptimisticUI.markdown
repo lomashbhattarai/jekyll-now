@@ -93,7 +93,8 @@ Here's another example from an E-commerce site.
     },
     watch: {
       isProductInCart() {
-        this.tempIsProductInCart = false // Once the cart is updated with actual data, let's use that instead of the temporary state
+        this.tempIsProductInCart = false 
+        // Once the cart is updated with actual data, let's use that instead of the temporary state
       }
     },
     methods: {
