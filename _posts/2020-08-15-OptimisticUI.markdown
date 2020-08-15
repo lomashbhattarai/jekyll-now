@@ -58,7 +58,7 @@ export default {
 </script>
 ```
 Here's another example from an E-commerce site.
-
+```
 <template>
   <div>
     <h1> {{ product.name }}</h1>
@@ -108,6 +108,6 @@ Here's another example from an E-commerce site.
     }  
   }
 </script>
-
+```
 It feels like a cunning trick (that's why I stuck to Pessimistic UI for a while). However it's not a dark pattern as one might think. We just have enough confidence in our system to return the right response and with this confidence we can act beforehand and give our users a better experience.
 
