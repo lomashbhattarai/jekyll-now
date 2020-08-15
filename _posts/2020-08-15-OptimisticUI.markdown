@@ -63,7 +63,7 @@ Here's another example from an E-commerce site.
   <div>
     <h1> {{ product.name }}</h1>
     <span v-if="finalIsProductInCart"> Added to Cart</span>
-    <button v-else @click="addProductToCart"></buttotn>
+    <buttotn v-else @click="addProductToCart"></buttotn>
   </div>
 </template>
 
@@ -73,7 +73,7 @@ Here's another example from an E-commerce site.
     props: ['product'],
     data() {
       return {
-        tempIsProdutInCart: false
+        tempIsProdcutInCart: false
       }
     },
     computed: {
@@ -86,23 +86,22 @@ Here's another example from an E-commerce site.
         }
       },
       finalIsProductInCart(){
-      return this.tempIsProductInCart || this.isProductInCart 
+      return this.tempIsProdcutInCart || this.isProductInCart 
       }
     },
     watch: {
       isProductInCart() {
-        this.tempIsProductInCart = false 
-        // Once the cart is updated with actual data, let's use that instead of the temporary state
+        this.tempIsProdcutInCart = false // Once the cart is updated with actual data, let's use that instead of the temporary state
       }
     },
     methods: {
       ...mapActions("cart", ["addToCart"]),
       addProductToCart() {
         try {
-          this.tempIsProductInCart = true
+          this.tempIsProdcutInCart = true
           this.addToCart(this.product);
         } catch (err) {
-            this.tempIsProductInCart = false
+            this.tempIsProdcutInCart = false
         }
       }
     }  
