@@ -11,7 +11,7 @@ Here is a visual example of both pessimistic UI and an optimistic UI.
 
 I preferred the pessimistic pattern for quite a time as it was more closer to truth and the UI flow was similar to how the system actually worked. On top of that (for better or worse), I would get rid of the loading spinners in the pessimistic UI. My reason being that spinners makes the site look slow. The hope would be that the server would respond fast enough and the change from ‘Mark as complete’ button to the ‘completed’ label would be seamless.
 
-Unfortunately, The server took a few seconds or more :( to respond.It’s always a pain to wait (with or without the loader). As Users expect to get a response for their action in less than a second(or half) and everyone loves a really fast site, I have begun to shift my preference from pessimistic UI to an optimistic one.
+Unfortunately, the server took a few seconds or more :( to respond.It’s always a pain to wait (with or without the loader). As Users expect to get a response for their action in less than a second(or half) and everyone loves a really fast site, I have begun to shift my preference from pessimistic UI to an optimistic one.
  
 Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (```tempIsCompleted```, ```tempIsProdutInCart``` is the following examples respectively).
 
@@ -59,7 +59,6 @@ export default {
 ```
 Here's another example from an E-commerce site.
 
-```
 <template>
   <div>
     <h1> {{ product.name }}</h1>
@@ -109,6 +108,6 @@ Here's another example from an E-commerce site.
     }  
   }
 </script>
-```
+
 It feels like a cunning trick (that's why I stuck to Pessimistic UI for a while). However it's not a dark pattern as one might think. We just have enough confidence in our system to return the right response and with this confidence we can act beforehand and give our users a better experience.
 
