@@ -27,7 +27,7 @@ Enough background talk. Below, I will show some code patterns I wrote for my pro
 export default {
   data(){
     return {
-      apiResponse: null,
+      apiResponse: '',
       tempIsCompleted: false
     }
   },
