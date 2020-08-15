@@ -3,19 +3,19 @@ layout: post
 title: Optimistic UI pattern in Vue
 ---
 
-Optimistic UI is a way of implementing UI in the hope and confidence (optimism) that the server will respond successfully to our API call. With this mental mode in mind, we change the state of our UI confidently before we get a response for our API.
+Optimistic UI is a way of implementing UI in the hope and confidence (optimism) that the server will respond successfully to our API call. With this mental mode in mind, we change the state of our UI confidently before we get a response from our API.
+
 Here is a visual example of both pessimistic UI and an optimistic UI.
 
 ![OvsP](https://scontent.fktm8-1.fna.fbcdn.net/v/t1.0-9/117444360_2531181637193391_8272829493525857125_n.jpg?_nc_cat=104&_nc_sid=8024bb&_nc_ohc=qnlLaf09GHoAX_iK3G0&_nc_ht=scontent.fktm8-1.fna&oh=961767f8ba69812ca1dc9ae2188b7f2f&oe=5F5E3152)
 
 I preferred the pessimistic pattern for quite a time as it was more closer to truth and the UI flow was similar to how the system actually worked. On top of that (for better or worse), I would get rid of the loading spinners in the pessimistic UI. My reason being that spinners makes the site look slow. The hope would be that the server would respond fast enough and the change from ‘Mark as complete’ button to the ‘completed’ label would be seamless.
 
-Unfortunately, The server took a few seconds or more :( to respond.It’s always a pain to wait (with or without the loader). As Users expect to get a response for their action within half a second and everyone loves a really fast site, I have begun to shift my preference from pessimistic UI to an optimistic one.
+Unfortunately, The server took a few seconds or more :( to respond.It’s always a pain to wait (with or without the loader). As Users expect to get a response for their action in less than a second(or half) and everyone loves a really fast site, I have begun to shift my preference from pessimistic UI to an optimistic one.
  
-Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one.
+Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (```tempIsCompleted```, ```tempIsProdutInCart``` is the following examples respectively).
 
 ```
-
 <template>
   <div>
     <span v-if="isCompleted">Completed</span>
@@ -56,7 +56,6 @@ export default {
   }
 }
 </script>
-
 ```
 Here's another example from an E-commerce site.
 
