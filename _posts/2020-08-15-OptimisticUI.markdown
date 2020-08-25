@@ -13,102 +13,101 @@ I preferred the pessimistic pattern for quite a time as it was more closer to tr
 
 Unfortunately, the server took a few seconds or more :( to respond.It’s always a pain to wait (with or without the loader). As Users expect to get a response for their action in less than a second(or half) and everyone loves a really fast site, I have begun to shift my preference from pessimistic UI to an optimistic one.
  
-Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (```tempIsCompleted```, ```tempIsProdutInCart``` is the following examples respectively).
+Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (`tempIsCompleted`, `tempIsProdutInCart` is the following examples respectively).
 
-```
-<template>
-  <div>
-    <span v-if="isCompleted">Completed</span>
-    <button v-else @click="markAsComplete">Mark as Complete</button>
-  </div>
-</template>
 
-<script>
-export default {
-  data(){
-    return {
-      apiResponse: '',
-      tempIsCompleted: false
-    }
-  },
-  computed: {
-    isCompleted() {
-      return tempIsCompleted || apiResponse.is_completed
-    }
-  },
-  methods: {
-    getApiResponse(){
-      axios.get('url').then(( {data} )=> {
-        this.apiResponse = data
-      })
-    },
-    markAsComplete() {
-      this.tempIsCompleted = true // leap of Optimism
-      axios.patch('url', { is_completed : true}).then(({data}) => {
+    <template>
+      <div>
+        <span v-if="isCompleted">Completed</span>
+        <button v-else @click="markAsComplete">Mark as Complete</button>
+      </div>
+    </template>
 
-        // already expected data.is_completed : true
-      
-      }).catch((err) => {
-        this.tempIsCompleted = false // error handling: reverting back the updated State
-
-      })
-    }
-  }
-}
-</script>
-```
-Here's another example from an E-commerce site.
-```
-<template>
-  <div>
-    <h1> {{ product.name }}</h1>
-    <span v-if="finalIsProductInCart"> Added to Cart</span>
-    <button v-else @click="addProductToCart"></buttotn>
-  </div>
-</template>
-
-<script>
-  import { mapState, mapActions } from "vuex";
-  export default {
-    props: ['product'],
-    data() {
-      return {
-        tempIsProdutInCart: false
-      }
-    },
-    computed: {
-      ...mapState("cart", ["carts"]),
-      isProductInCart() {
-        if (this.carts && this.carts.length) {
-          return this.carts.find((item) => {
-              return item.id == this.product.id;
-            });
+    <script>
+    export default {
+      data(){
+        return {
+          apiResponse: '',
+          tempIsCompleted: false
         }
       },
-      finalIsProductInCart(){
-      return this.tempIsProductInCart || this.isProductInCart 
-      }
-    },
-    watch: {
-      isProductInCart() {
-        this.tempIsProductInCart = false 
-        // Once the cart is updated with actual data, 
-        // let's use that instead of the temporary state
-      }
-    },
-    methods: {
-      ...mapActions("cart", ["addToCart"]),
-      addProductToCart() {
-        try {
-          this.tempIsProductInCart = true
-          this.addToCart(this.product);
-        } catch (err) {
-            this.tempIsProductInCart = false
+      computed: {
+        isCompleted() {
+          return tempIsCompleted || apiResponse.is_completed
+        }
+      },
+      methods: {
+        getApiResponse(){
+          axios.get('url').then(( {data} )=> {
+            this.apiResponse = data
+          })
+        },
+        markAsComplete() {
+          this.tempIsCompleted = true // leap of Optimism
+          axios.patch('url', { is_completed : true}).then(({data}) => {
+
+            // already expected data.is_completed : true
+
+          }).catch((err) => {
+            this.tempIsCompleted = false // error handling: reverting back the updated State
+
+          })
         }
       }
-    }  
-  }
-</script>
-```
+    }
+    </script>
+Here's another example from an E-commerce site.
+
+    <template>
+      <div>
+        <h1> {{ product.name }}</h1>
+        <span v-if="finalIsProductInCart"> Added to Cart</span>
+        <button v-else @click="addProductToCart"></buttotn>
+      </div>
+    </template>
+
+    <script>
+      import { mapState, mapActions } from "vuex";
+      export default {
+        props: ['product'],
+        data() {
+          return {
+            tempIsProdutInCart: false
+          }
+        },
+        computed: {
+          ...mapState("cart", ["carts"]),
+          isProductInCart() {
+            if (this.carts && this.carts.length) {
+              return this.carts.find((item) => {
+                  return item.id == this.product.id;
+                });
+            }
+          },
+          finalIsProductInCart(){
+          return this.tempIsProductInCart || this.isProductInCart 
+          }
+        },
+        watch: {
+          isProductInCart() {
+            this.tempIsProductInCart = false 
+            // Once the cart is updated with actual data, 
+            // let's use that instead of the temporary state
+          }
+        },
+        methods: {
+          ...mapActions("cart", ["addToCart"]),
+          addProductToCart() {
+            try {
+              this.tempIsProductInCart = true
+              this.addToCart(this.product);
+            } catch (err) {
+                this.tempIsProductInCart = false
+            }
+          }
+        }  
+      }
+    </script>
+    
 It feels like a cunning trick (that's why I stuck to Pessimistic UI for a while). However it's not a dark pattern as one might think. We just have enough confidence in our system to return the right response and with this confidence we can act beforehand and give our users a better experience.
 
