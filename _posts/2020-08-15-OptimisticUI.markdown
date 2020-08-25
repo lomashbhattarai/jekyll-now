@@ -15,47 +15,48 @@ Unfortunately, the server took a few seconds or more :( to respond.It’s always
  
 Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (`tempIsCompleted`, `tempIsProdutInCart` is the following examples respectively).
 
+<pre>
+<template>
+  <div>
+    <span v-if="isCompleted">Completed</span>
+    <button v-else @click="markAsComplete">Mark as Complete</button>
+  </div>
+</template>
 
-    <template>
-      <div>
-        <span v-if="isCompleted">Completed</span>
-        <button v-else @click="markAsComplete">Mark as Complete</button>
-      </div>
-    </template>
-
-    <script>
-    export default {
-      data(){
-        return {
-          apiResponse: '',
-          tempIsCompleted: false
-        }
-      },
-      computed: {
-        isCompleted() {
-          return tempIsCompleted || apiResponse.is_completed
-        }
-      },
-      methods: {
-        getApiResponse(){
-          axios.get('url').then(( {data} )=> {
-            this.apiResponse = data
-          })
-        },
-        markAsComplete() {
-          this.tempIsCompleted = true // leap of Optimism
-          axios.patch('url', { is_completed : true}).then(({data}) => {
-
-            // already expected data.is_completed : true
-
-          }).catch((err) => {
-            this.tempIsCompleted = false // error handling: reverting back the updated State
-
-          })
-        }
-      }
+<script>
+export default {
+  data(){
+    return {
+      apiResponse: '',
+      tempIsCompleted: false
     }
-    </script>
+  },
+  computed: {
+    isCompleted() {
+      return tempIsCompleted || apiResponse.is_completed
+    }
+  },
+  methods: {
+    getApiResponse(){
+      axios.get('url').then(( {data} )=> {
+        this.apiResponse = data
+      })
+    },
+    markAsComplete() {
+      this.tempIsCompleted = true // leap of Optimism
+      axios.patch('url', { is_completed : true}).then(({data}) => {
+
+        // already expected data.is_completed : true
+
+      }).catch((err) => {
+        this.tempIsCompleted = false // error handling: reverting back the updated State
+
+      })
+    }
+  }
+}
+</script>
+</pre>
 Here's another example from an E-commerce site.
 
     <template>
