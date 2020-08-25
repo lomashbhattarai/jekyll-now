@@ -15,7 +15,7 @@ Unfortunately, the server took a few seconds or more :( to respond.It’s always
  
 Enough background talk. Below, I will show some code patterns I wrote for my projects to turn the pessimistic UI into an optimistic one. I have used a temporary variable to store the optimistic state of our UI (`tempIsCompleted`, `tempIsProdutInCart` is the following examples respectively).
 
-<pre>
+
 <template>
   <div>
     <span v-if="isCompleted">Completed</span>
@@ -24,6 +24,8 @@ Enough background talk. Below, I will show some code patterns I wrote for my pro
 </template>
 
 <script>
+ 
+<pre>
 export default {
   data(){
     return {
@@ -55,8 +57,9 @@ export default {
     }
   }
 }
-</script>
 </pre>
+</script>
+
 Here's another example from an E-commerce site.
 
     <template>
