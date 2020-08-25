@@ -21,7 +21,9 @@ Enough background talk. Below, I will show some code patterns I wrote for my pro
         <button v-else @click="markAsComplete">Mark as Complete</button>
       </div>
     </template>
-**
+    
+The Script:
+
     <script>
      export default {
       data(){
