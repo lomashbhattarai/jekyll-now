@@ -2,7 +2,6 @@
 layout: post
 title: Skin in the game in Nepalese politics: Why sajha and bibeksheel did not win the elections
 ---
-
 I am reading Nassim taleb’s skin in the game and enjoying it quite a lot. The idea of skin in the game sounds like common sense, but its implications are interesting and sometimes surprising.
 First let's understand what skin in the game means.
 A person who has skin in the game takes risk. They face the consequences of their decisions. A person with skin in the game is ready to accept both the upside and downside of his actions.explain better possibly with an example
