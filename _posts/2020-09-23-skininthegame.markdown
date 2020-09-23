@@ -6,7 +6,7 @@ title: Skin in the game in Nepalese politics
 
 I am reading Nassim taleb’s skin in the game and enjoying it quite a lot. The idea of skin in the game sounds like common sense, but its implications are interesting and sometimes surprising.
 First let's understand what skin in the game means.
-A person who has skin in the game takes risk. They face the consequences of their decisions. A person with skin in the game is ready to accept both the upside and downside of his actions.explain better possibly with an example
+A person who has skin in the game takes risk. They face the consequences of their decisions. A person with skin in the game is ready to accept both the upside and downside of his actions. * Google skin in the game. above defination sounds insufficent and unclear*
 
 In almost all Interviews, politicians of Nepal speak of the many occasions they spent in Jail or (in case of Maoist) ,of the times they spent in the Jungle. All of them are signalling one thing, that they had skin in the game. In the game of politics,most of them risked their lives by going against the system.Their decisions and actions cost them their freedom,health and youthful years.
 Though I have always been a critic of communism, and also not a fan of the maoist revolution, the fact that Baburam Bhattarai and Prachanda put their lives in danger for the idea of the revolution cannot be denied. And for this very reason, both of them will remain relevant in nepali politics for a long time(possibly, till the end). The same goes for nepali congress and ex-UML leaders. The reason they get votes, despite their incompetence and corruption is because they seem like the only hope, they seem like real people.
