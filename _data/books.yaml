@@ -21,6 +21,10 @@ toRead:
     read: false
   - name: 'The Plague'
     read: false
+  - name: 'The Intelligent Investor'
+    read: false
+  - name: 'The Power Broker'
+    read: false
     
   
   
