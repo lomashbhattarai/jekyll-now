@@ -1,8 +1,6 @@
-currentlyReading:
-  - Atlas Shrugged
 toRead:
   - name: 'Atlas Shrugged'
-    read: false
+    read: true
   - name: 'Trails, Tremors and Hope: The Political Economy of Contemporary Nepal'
     read: false
   - name: 'The Diversity Myth: Multiculturalism and Political Intolerance on Campus'
