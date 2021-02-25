@@ -17,5 +17,3 @@ A list of:
 - [books](https://lomashbhattarai.github.io/books/)
 
 - [topics](https://lomashbhattarai.github.io/topics/)
-
-<-- - [to-dos](https://lomashbhattarai.github.io/to-dos/) -->
