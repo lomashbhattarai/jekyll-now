@@ -18,4 +18,4 @@ A list of:
 
 - [topics](https://lomashbhattarai.github.io/topics/)
 
-- [to-dos](https://lomashbhattarai.github.io/to-dos/)
+<-- - [to-dos](https://lomashbhattarai.github.io/to-dos/) -->
